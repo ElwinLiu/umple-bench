@@ -1,0 +1,9 @@
+id: hotel-booking
+name: Hotel booking (basic)
+description: Generate a simple hotel booking state machine from requirements.
+timeout_seconds: 120
+memory_mb: 512
+tags:
+  - basic
+  - guards
+entrypoint: run-tests.sh

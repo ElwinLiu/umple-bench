@@ -1,0 +1,18 @@
+class HotelBooking {
+  stateMachine {
+    Browsing {
+      reserve -> Reserved;
+    }
+    Reserved {
+      cancel -> Cancelled;
+      checkIn -> CheckedIn;
+    }
+    CheckedIn {
+      checkOut -> CheckedOut;
+    }
+    CheckedOut {
+    }
+    Cancelled {
+    }
+  }
+}

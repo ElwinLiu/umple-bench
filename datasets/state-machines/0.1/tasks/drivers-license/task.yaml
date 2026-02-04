@@ -1,0 +1,8 @@
+id: drivers-license
+name: Driver's license (basic)
+description: Generate a simple driver's license lifecycle state machine from requirements.
+timeout_seconds: 120
+memory_mb: 512
+tags:
+  - basic
+entrypoint: run-tests.sh

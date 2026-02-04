@@ -1,0 +1,11 @@
+{
+  "required_class": "DriversLicense",
+  "required_states": ["Applied", "KnowledgeTestPassed", "RoadTestPassed", "Licensed", "Suspended"],
+  "required_transitions": [
+    {"from": "Applied", "event": "passKnowledge", "to": "KnowledgeTestPassed"},
+    {"from": "KnowledgeTestPassed", "event": "passRoad", "to": "RoadTestPassed"},
+    {"from": "RoadTestPassed", "event": "issue", "to": "Licensed"},
+    {"from": "Licensed", "event": "suspend", "to": "Suspended"},
+    {"from": "Suspended", "event": "reinstate", "to": "Licensed"}
+  ]
+}
