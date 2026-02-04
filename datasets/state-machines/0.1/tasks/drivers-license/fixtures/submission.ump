@@ -1,0 +1,19 @@
+class DriversLicense {
+  stateMachine {
+    Applied {
+      passKnowledge -> KnowledgeTestPassed;
+    }
+    KnowledgeTestPassed {
+      passRoad -> RoadTestPassed;
+    }
+    RoadTestPassed {
+      issue -> Licensed;
+    }
+    Licensed {
+      suspend -> Suspended;
+    }
+    Suspended {
+      reinstate -> Licensed;
+    }
+  }
+}
