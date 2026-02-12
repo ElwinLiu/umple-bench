@@ -1,4 +1,0 @@
-datasets:
-  - name: state-machines
-    version: 0.1
-    path: state-machines/0.1
