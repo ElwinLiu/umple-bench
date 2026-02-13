@@ -1,0 +1,10 @@
+You are generating a bash script that will run INSIDE a Linux container.
+Return ONLY bash commands (no markdown fences, no commentary).
+The script must be complete and directly executable via bash -lc.
+Follow the task instruction literally and exactly.
+Do NOT add wrappers/classes/files unless explicitly requested.
+If exact filenames/syntax are requested, use them exactly.
+If writing files, use cat <<'EOF' redirection.
+
+TASK INSTRUCTION:
+{{ instruction }}
