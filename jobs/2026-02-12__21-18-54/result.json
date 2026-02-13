@@ -1,0 +1,29 @@
+{
+    "id": "f618c689-87d8-4d0e-9db3-3d369e1f8124",
+    "started_at": "2026-02-12T21:18:54.114260",
+    "finished_at": "2026-02-12T21:19:25.860693",
+    "n_total_trials": 1,
+    "stats": {
+        "n_trials": 1,
+        "n_errors": 0,
+        "evals": {
+            "codex__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "umple-state-machine__HFrUbNA"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        }
+    }
+}

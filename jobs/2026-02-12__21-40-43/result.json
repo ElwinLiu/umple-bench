@@ -1,0 +1,29 @@
+{
+    "id": "1710cadc-40c5-4982-96ac-5806e6ece575",
+    "started_at": "2026-02-12T21:40:43.779609",
+    "finished_at": "2026-02-12T21:40:56.573558",
+    "n_total_trials": 1,
+    "stats": {
+        "n_trials": 1,
+        "n_errors": 0,
+        "evals": {
+            "pi__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "umple-state-machine__MmS4Bma"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        }
+    }
+}

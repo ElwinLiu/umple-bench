@@ -1,0 +1,87 @@
+{
+    "id": "b6cc3978-ae99-46ae-b529-c2e6b4f8f5cb",
+    "task_name": "umple-state-machine",
+    "trial_name": "umple-state-machine__HFrUbNA",
+    "trial_uri": "file:///Users/elwin/code/umple-bench/jobs/2026-02-12__21-18-54/umple-state-machine__HFrUbNA",
+    "task_id": {
+        "path": "tasks/umple-state-machine"
+    },
+    "source": null,
+    "task_checksum": "8be8ffea58fe6c6cf596cf75df322f4832984c214dea5a68d27bf4f2ddf50d7d",
+    "config": {
+        "task": {
+            "path": "tasks/umple-state-machine",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "umple-state-machine__HFrUbNA",
+        "trials_dir": "jobs/2026-02-12__21-18-54",
+        "timeout_multiplier": 1.0,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.3-codex-high",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "job_id": "f618c689-87d8-4d0e-9db3-3d369e1f8124"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-02-13T02:18:54.116066Z",
+    "finished_at": "2026-02-13T02:19:25.853149Z",
+    "environment_setup": {
+        "started_at": "2026-02-13T02:18:54.119839Z",
+        "finished_at": "2026-02-13T02:18:56.290823Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-02-13T02:18:56.290898Z",
+        "finished_at": "2026-02-13T02:19:06.674781Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-02-13T02:19:06.675035Z",
+        "finished_at": "2026-02-13T02:19:15.047861Z"
+    },
+    "verifier": {
+        "started_at": "2026-02-13T02:19:15.049965Z",
+        "finished_at": "2026-02-13T02:19:15.331387Z"
+    }
+}
