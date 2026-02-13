@@ -1,0 +1,85 @@
+{
+    "id": "5ef0673f-58fc-4cae-96c4-956aa1e02b47",
+    "task_name": "umple-state-machine",
+    "trial_name": "umple-state-machine__RkjwrL7",
+    "trial_uri": "file:///Users/elwin/code/umple-bench/jobs/2026-02-12__21-38-05/umple-state-machine__RkjwrL7",
+    "task_id": {
+        "path": "tasks/umple-state-machine"
+    },
+    "source": null,
+    "task_checksum": "161ef8ce9da4d90a916155712c20bf6535634c088c468922ba9e4f5e79536250",
+    "config": {
+        "task": {
+            "path": "tasks/umple-state-machine",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "umple-state-machine__RkjwrL7",
+        "trials_dir": "jobs/2026-02-12__21-38-05",
+        "timeout_multiplier": 1.0,
+        "agent": {
+            "name": null,
+            "import_path": "external_agents.pi.agent:PiAgent",
+            "model_name": null,
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "job_id": "53cd68b8-4e62-44e0-b881-d9669edec3fe"
+    },
+    "agent_info": {
+        "name": "pi",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "ValueError",
+        "exception_message": "\"AgentContext\" object has no field \"result\"",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py\", line 362, in run\n    await self._execute_agent()\n  File \"/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py\", line 251, in _execute_agent\n    await asyncio.wait_for(\n    ...<6 lines>...\n    )\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/tasks.py\", line 488, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/Users/elwin/code/umple-bench/external_agents/pi/agent.py\", line 106, in run\n    context.result = result.stdout\n    ^^^^^^^^^^^^^^\n  File \"/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/pydantic/main.py\", line 1032, in __setattr__\n    elif (setattr_handler := self._setattr_handler(name, value)) is not None:\n                             ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/pydantic/main.py\", line 1079, in _setattr_handler\n    raise ValueError(f'\"{cls.__name__}\" object has no field \"{name}\"')\nValueError: \"AgentContext\" object has no field \"result\"\n",
+        "occurred_at": "2026-02-12T21:38:08.763101"
+    },
+    "started_at": "2026-02-13T02:38:05.638231Z",
+    "finished_at": "2026-02-13T02:38:19.150436Z",
+    "environment_setup": {
+        "started_at": "2026-02-13T02:38:05.641921Z",
+        "finished_at": "2026-02-13T02:38:08.244742Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-02-13T02:38:08.244808Z",
+        "finished_at": "2026-02-13T02:38:08.355324Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-02-13T02:38:08.355414Z",
+        "finished_at": "2026-02-13T02:38:08.760216Z"
+    },
+    "verifier": null
+}

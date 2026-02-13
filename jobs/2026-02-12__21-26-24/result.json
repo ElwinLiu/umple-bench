@@ -1,0 +1,27 @@
+{
+    "id": "60ac4aae-4d3a-47cb-a4db-8242697cb012",
+    "started_at": "2026-02-12T21:26:24.500505",
+    "finished_at": "2026-02-12T21:26:31.640727",
+    "n_total_trials": 1,
+    "stats": {
+        "n_trials": 1,
+        "n_errors": 1,
+        "evals": {
+            "oracle__adhoc": {
+                "n_trials": 0,
+                "n_errors": 1,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "reward_stats": {},
+                "exception_stats": {
+                    "RuntimeError": [
+                        "umple-state-machine__b9jLMna"
+                    ]
+                }
+            }
+        }
+    }
+}

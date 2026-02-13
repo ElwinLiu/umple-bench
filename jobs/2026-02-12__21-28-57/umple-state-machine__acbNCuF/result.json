@@ -1,0 +1,87 @@
+{
+    "id": "4afb9061-2c9e-48df-85ae-fc36d710c234",
+    "task_name": "umple-state-machine",
+    "trial_name": "umple-state-machine__acbNCuF",
+    "trial_uri": "file:///Users/elwin/code/umple-bench/jobs/2026-02-12__21-28-57/umple-state-machine__acbNCuF",
+    "task_id": {
+        "path": "tasks/umple-state-machine"
+    },
+    "source": null,
+    "task_checksum": "b8a4236472dd13b881091229d51669223339763115c013bdd2d83353c29ad5ab",
+    "config": {
+        "task": {
+            "path": "tasks/umple-state-machine",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "umple-state-machine__acbNCuF",
+        "trials_dir": "jobs/2026-02-12__21-28-57",
+        "timeout_multiplier": 1.0,
+        "agent": {
+            "name": "oracle",
+            "import_path": null,
+            "model_name": null,
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "job_id": "7efc248f-d067-4d96-bb25-5a569d586d02"
+    },
+    "agent_info": {
+        "name": "oracle",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-02-13T02:28:57.679956Z",
+    "finished_at": "2026-02-13T02:29:11.417016Z",
+    "environment_setup": {
+        "started_at": "2026-02-13T02:28:57.684036Z",
+        "finished_at": "2026-02-13T02:29:00.240509Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-02-13T02:29:00.240579Z",
+        "finished_at": "2026-02-13T02:29:00.240639Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-02-13T02:29:00.240706Z",
+        "finished_at": "2026-02-13T02:29:00.411967Z"
+    },
+    "verifier": {
+        "started_at": "2026-02-13T02:29:00.412161Z",
+        "finished_at": "2026-02-13T02:29:01.086435Z"
+    }
+}

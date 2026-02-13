@@ -1,0 +1,346 @@
+Traceback (most recent call last):
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py", line 358, in run
+    await self._setup_environment()
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py", line 204, in _setup_environment
+    await self._start_environment_with_retry()
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/tenacity/asyncio/__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 395, in __get_result
+    raise self._exception
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py", line 216, in _start_environment_with_retry
+    await asyncio.wait_for(
+    ...<4 lines>...
+    )
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker.py", line 205, in start
+    await self._run_docker_compose_command(["build"])
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker.py", line 184, in _run_docker_compose_command
+    raise RuntimeError(
+    ...<5 lines>...
+    )
+RuntimeError: Docker compose command failed for environment umple-state-machine. Command: docker compose -p umple-state-machine__gjquxm9 -f /Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout: time="2026-02-12T21:21:17-05:00" level=warning msg="Docker Compose is configured to build using Bake, but buildx isn't installed"
+#0 building with "colima" instance using docker driver
+
+#1 [main internal] load build definition from Dockerfile
+#1 transferring dockerfile: 455B done
+#1 DONE 0.0s
+
+#2 [main internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.3s
+
+#3 [main internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [main 1/5] FROM docker.io/library/python:3.11-slim@sha256:0b23cfb7425d065008b778022a17b1551c82f8b4866ee5a7a200084b7e2eafbf
+#4 resolve docker.io/library/python:3.11-slim@sha256:0b23cfb7425d065008b778022a17b1551c82f8b4866ee5a7a200084b7e2eafbf 0.0s done
+#4 CACHED
+
+#5 [main internal] load build context
+#5 transferring context: 33B done
+#5 DONE 0.0s
+
+#6 [main 2/5] RUN apt-get update   && apt-get install -y --no-install-recommends openjdk-21-jre-headless wget   && rm -rf /var/lib/apt/lists/*
+#6 0.232 Hit:1 http://deb.debian.org/debian trixie InRelease
+#6 0.240 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#6 0.263 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#6 0.279 Get:4 http://deb.debian.org/debian trixie/main arm64 Packages [9607 kB]
+#6 0.418 Get:5 http://deb.debian.org/debian trixie-updates/main arm64 Packages [5404 B]
+#6 0.430 Get:6 http://deb.debian.org/debian-security trixie-security/main arm64 Packages [108 kB]
+#6 1.244 Fetched 9812 kB in 1s (9068 kB/s)
+#6 1.244 Reading package lists...
+#6 1.675 Reading package lists...
+#6 2.070 Building dependency tree...
+#6 2.189 Reading state information...
+#6 2.379 The following additional packages will be installed:
+#6 2.380   ca-certificates-java java-common libgnutls30t64 libidn2-0 libjpeg62-turbo
+#6 2.380   liblcms2-2 libnspr4 libnss3 libp11-kit0 libpcsclite1 libpsl5t64 libtasn1-6
+#6 2.380   libunistring5
+#6 2.381 Suggested packages:
+#6 2.381   default-jre gnutls-bin liblcms2-utils pcscd libnss-mdns fonts-dejavu-extra
+#6 2.381   fonts-ipafont-gothic fonts-ipafont-mincho fonts-wqy-microhei
+#6 2.381   | fonts-wqy-zenhei fonts-indic
+#6 2.381 Recommended packages:
+#6 2.381   publicsuffix libcups2t64 libfontconfig1 libfreetype6 libharfbuzz0b
+#6 2.381   libasound2t64
+#6 2.467 The following NEW packages will be installed:
+#6 2.468   ca-certificates-java java-common libgnutls30t64 libidn2-0 libjpeg62-turbo
+#6 2.468   liblcms2-2 libnspr4 libnss3 libp11-kit0 libpcsclite1 libpsl5t64 libtasn1-6
+#6 2.468   libunistring5 openjdk-21-jre-headless wget
+#6 2.532 0 upgraded, 15 newly installed, 0 to remove and 0 not upgraded.
+#6 2.532 Need to get 45.9 MB of archives.
+#6 2.532 After this operation, 222 MB of additional disk space will be used.
+#6 2.532 Get:1 http://deb.debian.org/debian trixie/main arm64 libunistring5 arm64 1.3-2 [453 kB]
+#6 2.589 Get:2 http://deb.debian.org/debian trixie/main arm64 libidn2-0 arm64 2.3.8-2 [107 kB]
+#6 2.591 Get:3 http://deb.debian.org/debian trixie/main arm64 libp11-kit0 arm64 0.25.5-3 [409 kB]
+#6 2.617 Get:4 http://deb.debian.org/debian trixie/main arm64 libtasn1-6 arm64 4.20.0-2 [47.3 kB]
+#6 2.630 Get:5 http://deb.debian.org/debian trixie/main arm64 libgnutls30t64 arm64 3.8.9-3+deb13u1 [1375 kB]
+#6 2.670 Get:6 http://deb.debian.org/debian trixie/main arm64 libpsl5t64 arm64 0.21.2-1.1+b1 [57.1 kB]
+#6 2.683 Get:7 http://deb.debian.org/debian trixie/main arm64 wget arm64 1.25.0-2 [970 kB]
+#6 2.694 Get:8 http://deb.debian.org/debian trixie/main arm64 ca-certificates-java all 20240118 [11.6 kB]
+#6 2.694 Get:9 http://deb.debian.org/debian trixie/main arm64 java-common all 0.76 [6776 B]
+#6 2.702 Get:10 http://deb.debian.org/debian trixie/main arm64 libjpeg62-turbo arm64 1:2.1.5-4 [173 kB]
+#6 2.720 Get:11 http://deb.debian.org/debian trixie/main arm64 liblcms2-2 arm64 2.16-2 [151 kB]
+#6 2.733 Get:12 http://deb.debian.org/debian trixie/main arm64 libnspr4 arm64 2:4.36-1 [102 kB]
+#6 2.752 Get:13 http://deb.debian.org/debian trixie/main arm64 libnss3 arm64 2:3.110-1 [1292 kB]
+#6 2.777 Get:14 http://deb.debian.org/debian trixie/main arm64 libpcsclite1 arm64 2.3.3-1 [55.0 kB]
+#6 2.786 Get:15 http://deb.debian.org/debian-security trixie-security/main arm64 openjdk-21-jre-headless arm64 21.0.10+7-1~deb13u1 [40.7 MB]
+#6 3.384 debconf: unable to initialize frontend: Dialog
+#6 3.384 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 3.384 debconf: falling back to frontend: Readline
+#6 3.385 debconf: unable to initialize frontend: Readline
+#6 3.385 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/aarch64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/aarch64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/aarch64-linux-gnu/perl-base /usr/lib/aarch64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 15.)
+#6 3.385 debconf: falling back to frontend: Teletype
+#6 3.389 debconf: unable to initialize frontend: Teletype
+#6 3.389 debconf: (This frontend requires a controlling tty.)
+#6 3.389 debconf: falling back to frontend: Noninteractive
+#6 3.839 Fetched 45.9 MB in 1s (57.9 MB/s)
+#6 3.859 Selecting previously unselected package libunistring5:arm64.
+#6 3.859 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 5643 files and directories currently installed.)
+#6 3.863 Preparing to unpack .../00-libunistring5_1.3-2_arm64.deb ...
+#6 3.866 Unpacking libunistring5:arm64 (1.3-2) ...
+#6 3.907 Selecting previously unselected package libidn2-0:arm64.
+#6 3.907 Preparing to unpack .../01-libidn2-0_2.3.8-2_arm64.deb ...
+#6 3.909 Unpacking libidn2-0:arm64 (2.3.8-2) ...
+#6 3.926 Selecting previously unselected package libp11-kit0:arm64.
+#6 3.927 Preparing to unpack .../02-libp11-kit0_0.25.5-3_arm64.deb ...
+#6 3.928 Unpacking libp11-kit0:arm64 (0.25.5-3) ...
+#6 3.960 Selecting previously unselected package libtasn1-6:arm64.
+#6 3.960 Preparing to unpack .../03-libtasn1-6_4.20.0-2_arm64.deb ...
+#6 3.962 Unpacking libtasn1-6:arm64 (4.20.0-2) ...
+#6 3.978 Selecting previously unselected package libgnutls30t64:arm64.
+#6 3.978 Preparing to unpack .../04-libgnutls30t64_3.8.9-3+deb13u1_arm64.deb ...
+#6 3.979 Unpacking libgnutls30t64:arm64 (3.8.9-3+deb13u1) ...
+#6 4.044 Selecting previously unselected package libpsl5t64:arm64.
+#6 4.044 Preparing to unpack .../05-libpsl5t64_0.21.2-1.1+b1_arm64.deb ...
+#6 4.045 Unpacking libpsl5t64:arm64 (0.21.2-1.1+b1) ...
+#6 4.060 Selecting previously unselected package wget.
+#6 4.061 Preparing to unpack .../06-wget_1.25.0-2_arm64.deb ...
+#6 4.062 Unpacking wget (1.25.0-2) ...
+#6 4.121 Selecting previously unselected package ca-certificates-java.
+#6 4.121 Preparing to unpack .../07-ca-certificates-java_20240118_all.deb ...
+#6 4.123 Unpacking ca-certificates-java (20240118) ...
+#6 4.142 Selecting previously unselected package java-common.
+#6 4.142 Preparing to unpack .../08-java-common_0.76_all.deb ...
+#6 4.143 Unpacking java-common (0.76) ...
+#6 4.156 Selecting previously unselected package libjpeg62-turbo:arm64.
+#6 4.157 Preparing to unpack .../09-libjpeg62-turbo_1%3a2.1.5-4_arm64.deb ...
+#6 4.159 Unpacking libjpeg62-turbo:arm64 (1:2.1.5-4) ...
+#6 4.179 Selecting previously unselected package liblcms2-2:arm64.
+#6 4.180 Preparing to unpack .../10-liblcms2-2_2.16-2_arm64.deb ...
+#6 4.182 Unpacking liblcms2-2:arm64 (2.16-2) ...
+#6 4.201 Selecting previously unselected package libnspr4:arm64.
+#6 4.201 Preparing to unpack .../11-libnspr4_2%3a4.36-1_arm64.deb ...
+#6 4.203 Unpacking libnspr4:arm64 (2:4.36-1) ...
+#6 4.221 Selecting previously unselected package libnss3:arm64.
+#6 4.221 Preparing to unpack .../12-libnss3_2%3a3.110-1_arm64.deb ...
+#6 4.223 Unpacking libnss3:arm64 (2:3.110-1) ...
+#6 4.303 Selecting previously unselected package libpcsclite1:arm64.
+#6 4.303 Preparing to unpack .../13-libpcsclite1_2.3.3-1_arm64.deb ...
+#6 4.305 Unpacking libpcsclite1:arm64 (2.3.3-1) ...
+#6 4.319 Selecting previously unselected package openjdk-21-jre-headless:arm64.
+#6 4.320 Preparing to unpack .../14-openjdk-21-jre-headless_21.0.10+7-1~deb13u1_arm64.deb ...
+#6 4.321 Unpacking openjdk-21-jre-headless:arm64 (21.0.10+7-1~deb13u1) ...
+#6 5.902 Setting up liblcms2-2:arm64 (2.16-2) ...
+#6 5.904 Setting up java-common (0.76) ...
+#6 5.911 Setting up libjpeg62-turbo:arm64 (1:2.1.5-4) ...
+#6 5.914 Setting up libnspr4:arm64 (2:4.36-1) ...
+#6 5.916 Setting up libp11-kit0:arm64 (0.25.5-3) ...
+#6 5.919 Setting up libunistring5:arm64 (1.3-2) ...
+#6 5.921 Setting up libpcsclite1:arm64 (2.3.3-1) ...
+#6 5.924 Setting up libtasn1-6:arm64 (4.20.0-2) ...
+#6 5.927 Setting up ca-certificates-java (20240118) ...
+#6 5.935 No JRE found. Skipping Java certificates setup.
+#6 5.936 Setting up libidn2-0:arm64 (2.3.8-2) ...
+#6 5.939 Setting up libnss3:arm64 (2:3.110-1) ...
+#6 5.942 Setting up libgnutls30t64:arm64 (3.8.9-3+deb13u1) ...
+#6 5.944 Setting up openjdk-21-jre-headless:arm64 (21.0.10+7-1~deb13u1) ...
+#6 5.972 update-alternatives: using /usr/lib/jvm/java-21-openjdk-arm64/bin/java to provide /usr/bin/java (java) in auto mode
+#6 5.976 update-alternatives: using /usr/lib/jvm/java-21-openjdk-arm64/bin/jpackage to provide /usr/bin/jpackage (jpackage) in auto mode
+#6 5.977 update-alternatives: using /usr/lib/jvm/java-21-openjdk-arm64/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+#6 5.979 update-alternatives: using /usr/lib/jvm/java-21-openjdk-arm64/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+#6 5.980 update-alternatives: using /usr/lib/jvm/java-21-openjdk-arm64/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+#6 5.986 Setting up libpsl5t64:arm64 (0.21.2-1.1+b1) ...
+#6 5.988 Setting up wget (1.25.0-2) ...
+#6 5.992 Processing triggers for libc-bin (2.41-12+deb13u1) ...
+#6 6.001 Processing triggers for ca-certificates-java (20240118) ...
+#6 6.161 Adding debian:ACCVRAIZ1.pem
+#6 6.163 Adding debian:AC_RAIZ_FNMT-RCM.pem
+#6 6.170 Adding debian:AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.pem
+#6 6.171 Adding debian:ANF_Secure_Server_Root_CA.pem
+#6 6.172 Adding debian:Actalis_Authentication_Root_CA.pem
+#6 6.173 Adding debian:AffirmTrust_Commercial.pem
+#6 6.173 Adding debian:AffirmTrust_Networking.pem
+#6 6.174 Adding debian:AffirmTrust_Premium.pem
+#6 6.175 Adding debian:AffirmTrust_Premium_ECC.pem
+#6 6.176 Adding debian:Amazon_Root_CA_1.pem
+#6 6.177 Adding debian:Amazon_Root_CA_2.pem
+#6 6.178 Adding debian:Amazon_Root_CA_3.pem
+#6 6.178 Adding debian:Amazon_Root_CA_4.pem
+#6 6.180 Adding debian:Atos_TrustedRoot_2011.pem
+#6 6.181 Adding debian:Atos_TrustedRoot_Root_CA_ECC_TLS_2021.pem
+#6 6.183 Adding debian:Atos_TrustedRoot_Root_CA_RSA_TLS_2021.pem
+#6 6.184 Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+#6 6.185 Adding debian:BJCA_Global_Root_CA1.pem
+#6 6.186 Adding debian:BJCA_Global_Root_CA2.pem
+#6 6.186 Adding debian:Baltimore_CyberTrust_Root.pem
+#6 6.189 Adding debian:Buypass_Class_2_Root_CA.pem
+#6 6.189 Adding debian:Buypass_Class_3_Root_CA.pem
+#6 6.191 Adding debian:CA_Disig_Root_R2.pem
+#6 6.192 Adding debian:CFCA_EV_ROOT.pem
+#6 6.193 Adding debian:COMODO_Certification_Authority.pem
+#6 6.194 Adding debian:COMODO_ECC_Certification_Authority.pem
+#6 6.195 Adding debian:COMODO_RSA_Certification_Authority.pem
+#6 6.196 Adding debian:Certainly_Root_E1.pem
+#6 6.197 Adding debian:Certainly_Root_R1.pem
+#6 6.198 Adding debian:Certigna.pem
+#6 6.200 Adding debian:Certigna_Root_CA.pem
+#6 6.201 Adding debian:Certum_EC-384_CA.pem
+#6 6.203 Adding debian:Certum_Trusted_Network_CA.pem
+#6 6.203 Adding debian:Certum_Trusted_Network_CA_2.pem
+#6 6.204 Adding debian:Certum_Trusted_Root_CA.pem
+#6 6.204 Adding debian:CommScope_Public_Trust_ECC_Root-01.pem
+#6 6.205 Adding debian:CommScope_Public_Trust_ECC_Root-02.pem
+#6 6.207 Adding debian:CommScope_Public_Trust_RSA_Root-01.pem
+#6 6.208 Adding debian:CommScope_Public_Trust_RSA_Root-02.pem
+#6 6.209 Adding debian:Comodo_AAA_Services_root.pem
+#6 6.210 Adding debian:D-TRUST_BR_Root_CA_1_2020.pem
+#6 6.212 Adding debian:D-TRUST_BR_Root_CA_2_2023.pem
+#6 6.213 Adding debian:D-TRUST_EV_Root_CA_1_2020.pem
+#6 6.214 Adding debian:D-TRUST_EV_Root_CA_2_2023.pem
+#6 6.215 Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+#6 6.216 Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+#6 6.216 Adding debian:DigiCert_Assured_ID_Root_CA.pem
+#6 6.217 Adding debian:DigiCert_Assured_ID_Root_G2.pem
+#6 6.218 Adding debian:DigiCert_Assured_ID_Root_G3.pem
+#6 6.219 Adding debian:DigiCert_Global_Root_CA.pem
+#6 6.220 Adding debian:DigiCert_Global_Root_G2.pem
+#6 6.220 Adding debian:DigiCert_Global_Root_G3.pem
+#6 6.221 Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+#6 6.222 Adding debian:DigiCert_TLS_ECC_P384_Root_G5.pem
+#6 6.223 Adding debian:DigiCert_TLS_RSA4096_Root_G5.pem
+#6 6.225 Adding debian:DigiCert_Trusted_Root_G4.pem
+#6 6.226 Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+#6 6.228 Adding debian:Entrust_Root_Certification_Authority.pem
+#6 6.229 Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+#6 6.230 Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+#6 6.230 Adding debian:FIRMAPROFESIONAL_CA_ROOT-A_WEB.pem
+#6 6.232 Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+#6 6.233 Adding debian:GLOBALTRUST_2020.pem
+#6 6.234 Adding debian:GTS_Root_R1.pem
+#6 6.235 Adding debian:GTS_Root_R2.pem
+#6 6.235 Adding debian:GTS_Root_R3.pem
+#6 6.236 Adding debian:GTS_Root_R4.pem
+#6 6.237 Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+#6 6.238 Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+#6 6.239 Adding debian:GlobalSign_Root_CA.pem
+#6 6.241 Adding debian:GlobalSign_Root_CA_-_R3.pem
+#6 6.241 Adding debian:GlobalSign_Root_CA_-_R6.pem
+#6 6.241 Adding debian:GlobalSign_Root_E46.pem
+#6 6.242 Adding debian:GlobalSign_Root_R46.pem
+#6 6.243 Adding debian:Go_Daddy_Class_2_CA.pem
+#6 6.244 Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+#6 6.245 Adding debian:HARICA_TLS_ECC_Root_CA_2021.pem
+#6 6.246 Adding debian:HARICA_TLS_RSA_Root_CA_2021.pem
+#6 6.247 Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+#6 6.248 Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+#6 6.249 Adding debian:HiPKI_Root_CA_-_G1.pem
+#6 6.251 Adding debian:Hongkong_Post_Root_CA_3.pem
+#6 6.252 Adding debian:ISRG_Root_X1.pem
+#6 6.253 Adding debian:ISRG_Root_X2.pem
+#6 6.254 Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+#6 6.255 Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+#6 6.257 Adding debian:Izenpe.com.pem
+#6 6.258 Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+#6 6.259 Adding debian:Microsoft_ECC_Root_Certificate_Authority_2017.pem
+#6 6.260 Adding debian:Microsoft_RSA_Root_Certificate_Authority_2017.pem
+#6 6.261 Adding debian:NAVER_Global_Root_Certification_Authority.pem
+#6 6.263 Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+#6 6.265 Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+#6 6.266 Adding debian:OISTE_WISeKey_Global_Root_GC_CA.pem
+#6 6.267 Adding debian:QuoVadis_Root_CA_1_G3.pem
+#6 6.268 Adding debian:QuoVadis_Root_CA_2.pem
+#6 6.270 Adding debian:QuoVadis_Root_CA_2_G3.pem
+#6 6.271 Adding debian:QuoVadis_Root_CA_3.pem
+#6 6.272 Adding debian:QuoVadis_Root_CA_3_G3.pem
+#6 6.272 Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+#6 6.274 Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+#6 6.274 Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+#6 6.276 Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+#6 6.276 Adding debian:SSL.com_TLS_ECC_Root_CA_2022.pem
+#6 6.277 Adding debian:SSL.com_TLS_RSA_Root_CA_2022.pem
+#6 6.278 Adding debian:SZAFIR_ROOT_CA2.pem
+#6 6.279 Adding debian:Sectigo_Public_Server_Authentication_Root_E46.pem
+#6 6.280 Adding debian:Sectigo_Public_Server_Authentication_Root_R46.pem
+#6 6.280 Adding debian:SecureSign_Root_CA12.pem
+#6 6.281 Adding debian:SecureSign_Root_CA14.pem
+#6 6.282 Adding debian:SecureSign_Root_CA15.pem
+#6 6.282 Adding debian:SecureTrust_CA.pem
+#6 6.283 Adding debian:Secure_Global_CA.pem
+#6 6.284 Adding debian:Security_Communication_ECC_RootCA1.pem
+#6 6.285 Adding debian:Security_Communication_RootCA2.pem
+#6 6.286 Adding debian:Starfield_Class_2_CA.pem
+#6 6.287 Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+#6 6.288 Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+#6 6.289 Adding debian:SwissSign_Gold_CA_-_G2.pem
+#6 6.290 Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+#6 6.291 Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+#6 6.292 Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+#6 6.293 Adding debian:TWCA_CYBER_Root_CA.pem
+#6 6.294 Adding debian:TWCA_Global_Root_CA.pem
+#6 6.295 Adding debian:TWCA_Root_Certification_Authority.pem
+#6 6.296 Adding debian:Telekom_Security_TLS_ECC_Root_2020.pem
+#6 6.298 Adding debian:Telekom_Security_TLS_RSA_Root_2023.pem
+#6 6.300 Adding debian:TeliaSonera_Root_CA_v1.pem
+#6 6.301 Adding debian:Telia_Root_CA_v2.pem
+#6 6.302 Adding debian:TrustAsia_Global_Root_CA_G3.pem
+#6 6.303 Adding debian:TrustAsia_Global_Root_CA_G4.pem
+#6 6.309 Adding debian:Trustwave_Global_Certification_Authority.pem
+#6 6.309 Adding debian:Trustwave_Global_ECC_P256_Certification_Authority.pem
+#6 6.310 Adding debian:Trustwave_Global_ECC_P384_Certification_Authority.pem
+#6 6.311 Adding debian:TunTrust_Root_CA.pem
+#6 6.312 Adding debian:UCA_Extended_Validation_Root.pem
+#6 6.313 Adding debian:UCA_Global_G2_Root.pem
+#6 6.313 Adding debian:USERTrust_ECC_Certification_Authority.pem
+#6 6.314 Adding debian:USERTrust_RSA_Certification_Authority.pem
+#6 6.315 Adding debian:XRamp_Global_CA_Root.pem
+#6 6.316 Adding debian:certSIGN_ROOT_CA.pem
+#6 6.317 Adding debian:certSIGN_Root_CA_G2.pem
+#6 6.318 Adding debian:e-Szigno_Root_CA_2017.pem
+#6 6.319 Adding debian:ePKI_Root_Certification_Authority.pem
+#6 6.320 Adding debian:emSign_ECC_Root_CA_-_C3.pem
+#6 6.320 Adding debian:emSign_ECC_Root_CA_-_G3.pem
+#6 6.321 Adding debian:emSign_Root_CA_-_C1.pem
+#6 6.323 Adding debian:emSign_Root_CA_-_G1.pem
+#6 6.323 Adding debian:vTrus_ECC_Root_CA.pem
+#6 6.323 Adding debian:vTrus_Root_CA.pem
+#6 6.346 done.
+#6 DONE 6.4s
+
+#7 [main 3/5] RUN wget -q https://www.txl.ca/distrib/txl-10.5b-linux.x86_64.tar.gz   && tar -xzf txl-10.5b-linux.x86_64.tar.gz -C /opt   && rm txl-10.5b-linux.x86_64.tar.gz
+#7 ERROR: process "/bin/sh -c wget -q https://www.txl.ca/distrib/txl-10.5b-linux.x86_64.tar.gz   && tar -xzf txl-10.5b-linux.x86_64.tar.gz -C /opt   && rm txl-10.5b-linux.x86_64.tar.gz" did not complete successfully: exit code: 8
+------
+ > [main 3/5] RUN wget -q https://www.txl.ca/distrib/txl-10.5b-linux.x86_64.tar.gz   && tar -xzf txl-10.5b-linux.x86_64.tar.gz -C /opt   && rm txl-10.5b-linux.x86_64.tar.gz:
+------
+failed to solve: process "/bin/sh -c wget -q https://www.txl.ca/distrib/txl-10.5b-linux.x86_64.tar.gz   && tar -xzf txl-10.5b-linux.x86_64.tar.gz -C /opt   && rm txl-10.5b-linux.x86_64.tar.gz" did not complete successfully: exit code: 8
+. Stderr: None. 

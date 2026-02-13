@@ -1,0 +1,3 @@
+Processing -> /app/door.ump
+  Finished generating Java
+Success! Processed /app/door.ump.

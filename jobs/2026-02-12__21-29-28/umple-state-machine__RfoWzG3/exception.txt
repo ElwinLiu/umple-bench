@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py", line 359, in run
+    await self._setup_agent()
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py", line 232, in _setup_agent
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/agents/installed/base.py", line 123, in setup
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: Agent setup failed with exit code 100. See logs in jobs/2026-02-12__21-29-28/umple-state-machine__RfoWzG3/agent/setup

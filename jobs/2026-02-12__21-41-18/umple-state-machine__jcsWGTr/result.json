@@ -1,0 +1,91 @@
+{
+    "id": "cc044480-6a40-4943-8057-1735ab50dd70",
+    "task_name": "umple-state-machine",
+    "trial_name": "umple-state-machine__jcsWGTr",
+    "trial_uri": "file:///Users/elwin/code/umple-bench/jobs/2026-02-12__21-41-18/umple-state-machine__jcsWGTr",
+    "task_id": {
+        "path": "tasks/umple-state-machine"
+    },
+    "source": null,
+    "task_checksum": "7b5e59cfab951b4369fb20ae44a124e9b002cfb05d74b28f19113c8e462aa8d9",
+    "config": {
+        "task": {
+            "path": "tasks/umple-state-machine",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "umple-state-machine__jcsWGTr",
+        "trials_dir": "jobs/2026-02-12__21-41-18",
+        "timeout_multiplier": 1.0,
+        "agent": {
+            "name": null,
+            "import_path": "external_agents.pi.agent:PiAgent",
+            "model_name": null,
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "job_id": "9811b635-5ac1-4521-824a-579790b185cc"
+    },
+    "agent_info": {
+        "name": "pi",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": {
+            "return_code": 0,
+            "stdout_length": 155,
+            "stderr_length": 0
+        }
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-02-13T02:41:18.523445Z",
+    "finished_at": "2026-02-13T02:41:31.759164Z",
+    "environment_setup": {
+        "started_at": "2026-02-13T02:41:18.527327Z",
+        "finished_at": "2026-02-13T02:41:20.640168Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-02-13T02:41:20.640245Z",
+        "finished_at": "2026-02-13T02:41:20.754379Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-02-13T02:41:20.754483Z",
+        "finished_at": "2026-02-13T02:41:21.135684Z"
+    },
+    "verifier": {
+        "started_at": "2026-02-13T02:41:21.135809Z",
+        "finished_at": "2026-02-13T02:41:21.306909Z"
+    }
+}
