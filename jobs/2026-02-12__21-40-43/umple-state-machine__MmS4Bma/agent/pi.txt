@@ -1,3 +1,0 @@
-bash: line 12: /app/door.ump: No such file or directory
-bash: line 12: /app/door.ump: No such file or directory
-bash: line 12: pi-agent: command not found

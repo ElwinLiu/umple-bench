@@ -1,6 +1,0 @@
-Processing -> /app/door.ump
-TXL is required for Python code generation. Please go to https://www.txl.ca/txl-download.html to download and install TXL.
-Aborting code generation... 
-  Finished generating Python
-Success! Processed /app/door.ump.
-Door.py was not generated

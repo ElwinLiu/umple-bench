@@ -1,104 +1,0 @@
-Trial umple-state-machine__b9jLMna failed: Docker compose command failed for environment umple-state-machine. Command: docker compose -p umple-state-machine__b9jlmna -f /Users/elwin/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout: time="2026-02-12T21:26:24-05:00" level=warning msg="Docker Compose is configured to build using Bake, but buildx isn't installed"
-#0 building with "colima" instance using docker driver
-
-#1 [main internal] load build definition from Dockerfile
-#1 transferring dockerfile: 771B done
-#1 DONE 0.0s
-
-#2 [main internal] load metadata for docker.io/library/python:3.11-slim
-#2 DONE 0.2s
-
-#3 [main internal] load .dockerignore
-#3 transferring context: 2B done
-#3 DONE 0.0s
-
-#4 [main 1/6] FROM docker.io/library/python:3.11-slim@sha256:0b23cfb7425d065008b778022a17b1551c82f8b4866ee5a7a200084b7e2eafbf
-#4 resolve docker.io/library/python:3.11-slim@sha256:0b23cfb7425d065008b778022a17b1551c82f8b4866ee5a7a200084b7e2eafbf 0.0s done
-#4 CACHED
-
-#5 [main internal] load build context
-#5 transferring context: 33B done
-#5 DONE 0.0s
-
-#6 [main 2/6] RUN apt-get update   && apt-get install -y --no-install-recommends wget libc6   && rm -rf /var/lib/apt/lists/*
-#6 0.249 Hit:1 http://deb.debian.org/debian trixie InRelease
-#6 0.260 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
-#6 0.286 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
-#6 0.311 Get:4 http://deb.debian.org/debian trixie/main arm64 Packages [9607 kB]
-#6 0.474 Get:5 http://deb.debian.org/debian trixie-updates/main arm64 Packages [5404 B]
-#6 0.483 Get:6 http://deb.debian.org/debian-security trixie-security/main arm64 Packages [108 kB]
-#6 1.285 Fetched 9812 kB in 1s (8618 kB/s)
-#6 1.285 Reading package lists...
-#6 1.734 Reading package lists...
-#6 2.129 Building dependency tree...
-#6 2.250 Reading state information...
-#6 2.430 libc6 is already the newest version (2.41-12+deb13u1).
-#6 2.430 The following additional packages will be installed:
-#6 2.431   libgnutls30t64 libidn2-0 libp11-kit0 libpsl5t64 libtasn1-6 libunistring5
-#6 2.432 Suggested packages:
-#6 2.432   gnutls-bin
-#6 2.432 Recommended packages:
-#6 2.432   publicsuffix
-#6 2.495 The following NEW packages will be installed:
-#6 2.496   libgnutls30t64 libidn2-0 libp11-kit0 libpsl5t64 libtasn1-6 libunistring5
-#6 2.496   wget
-#6 2.562 0 upgraded, 7 newly installed, 0 to remove and 0 not upgraded.
-#6 2.562 Need to get 3419 kB of archives.
-#6 2.562 After this operation, 12.7 MB of additional disk space will be used.
-#6 2.562 Get:1 http://deb.debian.org/debian trixie/main arm64 libunistring5 arm64 1.3-2 [453 kB]
-#6 2.609 Get:2 http://deb.debian.org/debian trixie/main arm64 libidn2-0 arm64 2.3.8-2 [107 kB]
-#6 2.611 Get:3 http://deb.debian.org/debian trixie/main arm64 libp11-kit0 arm64 0.25.5-3 [409 kB]
-#6 2.641 Get:4 http://deb.debian.org/debian trixie/main arm64 libtasn1-6 arm64 4.20.0-2 [47.3 kB]
-#6 2.652 Get:5 http://deb.debian.org/debian trixie/main arm64 libgnutls30t64 arm64 3.8.9-3+deb13u1 [1375 kB]
-#6 2.682 Get:6 http://deb.debian.org/debian trixie/main arm64 libpsl5t64 arm64 0.21.2-1.1+b1 [57.1 kB]
-#6 2.690 Get:7 http://deb.debian.org/debian trixie/main arm64 wget arm64 1.25.0-2 [970 kB]
-#6 2.797 debconf: unable to initialize frontend: Dialog
-#6 2.797 debconf: (TERM is not set, so the dialog frontend is not usable.)
-#6 2.797 debconf: falling back to frontend: Readline
-#6 2.797 debconf: unable to initialize frontend: Readline
-#6 2.797 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/aarch64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/aarch64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/aarch64-linux-gnu/perl-base /usr/lib/aarch64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 7.)
-#6 2.797 debconf: falling back to frontend: Teletype
-#6 2.799 debconf: unable to initialize frontend: Teletype
-#6 2.799 debconf: (This frontend requires a controlling tty.)
-#6 2.799 debconf: falling back to frontend: Noninteractive
-#6 3.220 Fetched 3419 kB in 0s (17.6 MB/s)
-#6 3.232 Selecting previously unselected package libunistring5:arm64.
-#6 3.232 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 5643 files and directories currently installed.)
-#6 3.235 Preparing to unpack .../0-libunistring5_1.3-2_arm64.deb ...
-#6 3.238 Unpacking libunistring5:arm64 (1.3-2) ...
-#6 3.276 Selecting previously unselected package libidn2-0:arm64.
-#6 3.277 Preparing to unpack .../1-libidn2-0_2.3.8-2_arm64.deb ...
-#6 3.278 Unpacking libidn2-0:arm64 (2.3.8-2) ...
-#6 3.296 Selecting previously unselected package libp11-kit0:arm64.
-#6 3.297 Preparing to unpack .../2-libp11-kit0_0.25.5-3_arm64.deb ...
-#6 3.298 Unpacking libp11-kit0:arm64 (0.25.5-3) ...
-#6 3.327 Selecting previously unselected package libtasn1-6:arm64.
-#6 3.327 Preparing to unpack .../3-libtasn1-6_4.20.0-2_arm64.deb ...
-#6 3.328 Unpacking libtasn1-6:arm64 (4.20.0-2) ...
-#6 3.343 Selecting previously unselected package libgnutls30t64:arm64.
-#6 3.343 Preparing to unpack .../4-libgnutls30t64_3.8.9-3+deb13u1_arm64.deb ...
-#6 3.344 Unpacking libgnutls30t64:arm64 (3.8.9-3+deb13u1) ...
-#6 3.409 Selecting previously unselected package libpsl5t64:arm64.
-#6 3.409 Preparing to unpack .../5-libpsl5t64_0.21.2-1.1+b1_arm64.deb ...
-#6 3.410 Unpacking libpsl5t64:arm64 (0.21.2-1.1+b1) ...
-#6 3.425 Selecting previously unselected package wget.
-#6 3.426 Preparing to unpack .../6-wget_1.25.0-2_arm64.deb ...
-#6 3.427 Unpacking wget (1.25.0-2) ...
-#6 3.489 Setting up libp11-kit0:arm64 (0.25.5-3) ...
-#6 3.492 Setting up libunistring5:arm64 (1.3-2) ...
-#6 3.495 Setting up libtasn1-6:arm64 (4.20.0-2) ...
-#6 3.499 Setting up libidn2-0:arm64 (2.3.8-2) ...
-#6 3.503 Setting up libgnutls30t64:arm64 (3.8.9-3+deb13u1) ...
-#6 3.506 Setting up libpsl5t64:arm64 (0.21.2-1.1+b1) ...
-#6 3.510 Setting up wget (1.25.0-2) ...
-#6 3.517 Processing triggers for libc-bin (2.41-12+deb13u1) ...
-#6 DONE 3.6s
-
-#7 [main 3/6] RUN wget -q --timeout=60 --tries=2 https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz   && tar -xzf jdk-17_linux-x64_bin.tar.gz -C /opt   && rm jdk-17_linux-x64_bin.tar.gz
-#7 ERROR: process "/bin/sh -c wget -q --timeout=60 --tries=2 https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz   && tar -xzf jdk-17_linux-x64_bin.tar.gz -C /opt   && rm jdk-17_linux-x64_bin.tar.gz" did not complete successfully: exit code: 8
-------
- > [main 3/6] RUN wget -q --timeout=60 --tries=2 https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz   && tar -xzf jdk-17_linux-x64_bin.tar.gz -C /opt   && rm jdk-17_linux-x64_bin.tar.gz:
-------
-failed to solve: process "/bin/sh -c wget -q --timeout=60 --tries=2 https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz   && tar -xzf jdk-17_linux-x64_bin.tar.gz -C /opt   && rm jdk-17_linux-x64_bin.tar.gz" did not complete successfully: exit code: 8
-. Stderr: None. 
-Not retrying trial because the maximum number of retries has been reached

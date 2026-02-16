@@ -1,0 +1,33 @@
+#!/bin/bash
+set -euo pipefail
+
+apt-get update
+apt-get install -y curl ca-certificates git
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+# Source nvm with || true to handle nvm.sh's internal non-zero returns.
+. "$NVM_DIR/nvm.sh" || true
+command -v nvm >/dev/null 2>&1 || {
+  echo "Error: NVM failed to load" >&2
+  exit 1
+}
+
+nvm install 22
+nvm use 22 >/dev/null
+npm -v
+
+{% if version %}
+npm install -g @mariozechner/pi-coding-agent@{{ version }}
+{% else %}
+npm install -g @mariozechner/pi-coding-agent@latest
+{% endif %}
+
+# Make sure pi is reachable without sourcing nvm in future shells.
+PI_BIN="$(command -v pi || true)"
+if [ -n "$PI_BIN" ]; then
+  ln -sf "$PI_BIN" /usr/local/bin/pi
+fi
+
+pi --version
