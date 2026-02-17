@@ -1,6 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
+# Allow offline task runs when the environment already has pi preinstalled.
+if command -v pi >/dev/null 2>&1; then
+  pi --version
+  exit 0
+fi
+
 apt-get update
 apt-get install -y curl ca-certificates git
 
