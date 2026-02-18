@@ -1,0 +1,40 @@
+job_name: umple-state-machine-benchmark
+
+# Run settings
+n_attempts: 1  # 1 trial per task
+
+# Agent configuration - comment/uncomment as needed
+agents:
+  # - name: oracle  # Use this to verify tasks work
+  
+  - name: claude-code
+    model_name: anthropic/claude-opus-4-1
+    override_timeout_sec: 600
+  
+  # - name: codex
+  #   model_name: openai/gpt-4o
+  #   override_timeout_sec: 600
+  
+  # - name: openhands
+  #   override_timeout_sec: 600
+
+# Local dataset path
+datasets:
+  - path: tasks/
+    # Optional: filter tasks
+    # task_names:
+    #   - "umple-state-machine"
+    #   - "umple-hotel-booking"
+
+# Environment settings
+environment:
+  type: docker
+  delete_after: true
+
+# Orchestration
+orchestrator:
+  type: local
+  n_concurrent: 4
+
+# Timeout multiplier (1.0 = use task.toml timeouts)
+timeout_multiplier: 1.0

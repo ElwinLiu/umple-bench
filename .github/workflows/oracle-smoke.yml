@@ -1,0 +1,29 @@
+name: Oracle Smoke Test
+
+on:
+  pull_request:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  oracle-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Harbor
+        run: pip install harbor
+
+      - name: Verify Docker
+        run: docker version
+
+      - name: Run oracle smoke test across all tasks
+        run: harbor run -p tasks/ -a oracle -n 2

@@ -7,9 +7,15 @@ This repository contains **Harbor / Terminal-Bench-style tasks** for evaluating 
 
 ## Current tasks
 
-### `tasks/umple-state-machine`
+Current dataset lives under `tasks/` and contains five Umple state-machine tasks:
+- `umple-state-machine-door`
+- `umple-state-machine-hotel-booking`
+- `umple-state-machine-drivers-license`
+- `umple-state-machine-credit-card`
+- `umple-state-machine-agent-loop`
+
 Input: instruction with requirements in Umple syntax.
-Output: State Machine in Python (easy to test)
+Output: a single `.ump` file in `/app` (task-specific filename).
 
 ## Quick start
 

@@ -1,0 +1,22 @@
+version = "1.0"
+
+[metadata]
+author_name = "Elwin"
+author_email = "elwin@example.com"
+difficulty = "medium"
+category = "state-machine"
+tags = ["umple", "state-machine", "credit-card"]
+source = "https://umple.org/testmanual/RequirementsExamples.html"
+
+[verifier]
+timeout_sec = 300.0
+
+[agent]
+timeout_sec = 300.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+allow_internet = true
