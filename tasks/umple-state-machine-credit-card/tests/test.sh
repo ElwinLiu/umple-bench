@@ -19,7 +19,9 @@ if [ ! -f "$UMPLE_FILE" ]; then
 fi
 
 # --- Step 2: Umple syntax validation ---
-java -jar "$UMPLE_JAR" "$UMPLE_FILE" 2>&1 | tee /tmp/umple_parse.txt
+if ! java -jar "$UMPLE_JAR" "$UMPLE_FILE" 2>&1 | tee /tmp/umple_parse.txt; then
+  fail "Umple parse command failed"
+fi
 if grep -qi "error" /tmp/umple_parse.txt; then
   fail "Umple parsing errors detected"
 fi
@@ -31,7 +33,9 @@ fi
 
 # --- Step 4: Generate Python code from Umple ---
 cd /app
-java -jar "$UMPLE_JAR" -g Python "$UMPLE_FILE" 2>&1 | tee /tmp/umple_gen.txt
+if ! java -jar "$UMPLE_JAR" -g Python "$UMPLE_FILE" 2>&1 | tee /tmp/umple_gen.txt; then
+  fail "Python code generation command failed"
+fi
 if grep -qi "error" /tmp/umple_gen.txt; then
   fail "Python code generation failed"
 fi
