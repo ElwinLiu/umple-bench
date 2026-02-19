@@ -4,6 +4,8 @@ Create `/app/agent.ump` using Umple syntax.
 
 ## Requirements
 
+- Use valid Umple identifiers (no spaces in state/event identifiers). For example, use names like `assistantTurn`, `toolTurn`, `queueCheck`, and `awaitingPermission`.
+
 - Define a class called `AgentLoop` with a state machine attribute named `state`.
 - The agent loop waits in an idle mode until a run is started or continued, then it enters the assistant turn (idle → assistant turn).
 - During the assistant turn, if the assistant requests tool execution, the agent loop enters the tool turn (assistant turn → tool turn).
