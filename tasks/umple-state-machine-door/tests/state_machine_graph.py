@@ -145,7 +145,7 @@ def extract_machine_model(
 
             if not isinstance(result, bool):
                 continue
-            if result and after != before:
+            if result:
                 adjacency[index[source]][index[after]] += 1
             elif (not result) and after != before:
                 raise AssertionError(
